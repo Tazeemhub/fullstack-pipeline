@@ -31,4 +31,5 @@ def execute_etl_pipeline(payload: IngestPayload )-> None:
         db.rollback()
         print(f"[ETL ERROR ]: {exc}")
     finally:
-        db.close()
+       # db.close()
+

@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker, declaration_base
+from sqlalchemy.orm import sessionmaker, declarative_base
 
 load_dotenv()
 
@@ -15,7 +15,7 @@ engine= create_engine(
     pool_pre_ping=True,
 )
 
-SessionLocal = sessionmaker(autocommit+False, autoflush=False, bing=engine)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bing=engine)
 Base = declarative_base()
 
 def get_db():
